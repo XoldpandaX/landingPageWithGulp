@@ -1,0 +1,566 @@
+$line-color: #2c2c2d;
+$dwnldBtn-color: #1962b2;
+$dwnldBtnHover-color: #3581d5;
+$splitBtnActive-color: #3581d5;
+$splitBtnPassiveBorder-color: #385eb1;
+$splitBtnPassive-color: #385eb1;
+$linkBtn-color: #3581d5;
+$how-t0-color: #b4d1f2;
+$program-link-color: #3581d5;
+$urging-tile-color: #3581d5;
+$urging-tile-color: #e3f0ff;
+$guide-line-color: #bcbcbc;
+$guide-number-color: #f68263;
+$light-color-gradient: linear-gradient(to right, #e1fffa 0%, #e1fffa 30%, #ddffe4 80%, #ddffe4 100%);
+$bigFont: 2.5rem;
+$mainFontSize: 1.25rem;
+$medium-font-size: 2.125rem;
+$sub-link-size: 0.875rem;
+$urging-tile-font-size: 1.5rem;
+
+
+#fullFeatureMode {
+  display: none;
+}
+
+.clear {
+  clear: both;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #000;
+}
+
+.float-right { float: right; }
+.float-left { float: left; }
+.response-img {
+  width: 100%;
+  height: auto;
+}
+.overflow-visible { overflow: visible !important; }
+.dot {
+  position: relative;
+  &_normal-size {
+    &:before {
+      content: "\25CF";
+      font-size: 27px;
+      color: #bcbcbc;
+      position: absolute;
+      top: 30px;
+      left: 0;
+    }
+  }
+  &_other-size {
+    &:before {
+      font-size: 18px !important;
+    }
+  }
+}
+
+
+.container {
+  max-width: 1160px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  position: relative;
+  &__dot-line {
+    position: relative;
+  }
+}
+
+.line {
+  background-color: $line-color;
+  &_top {
+    height: 75px;
+  }
+  &_bottom {
+    height: 150px;
+  }
+}
+
+.big-title {
+  font-weight: 700;
+  font-size: $bigFont;
+}
+
+.btn {
+  position: relative;
+  width: 255px;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Open Sans', sans-serif;
+  height: 75px;
+  background-color: $dwnldBtn-color;
+  color: white;
+  font-size: 1.25rem;
+  &link {
+    height: auto !important;
+  }
+  &:hover {
+    background-color: $dwnldBtnHover-color;
+    transition: .5s;
+    cursor: pointer;
+  }
+  &:first-child { margin-right: 27px; }
+  &__descr {
+    position: relative;
+    margin-left: 32px;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: -31px;
+    }
+    &_win {
+      &:before {
+        content: url('../img/windows-logo.png');
+      }
+    }
+    &_mac {
+      &:before {
+        top: -3px;
+        content: url('../img/mac--logo-grey.png');
+      }
+    }
+  }
+  &__descr2 {
+    display: none;
+  }
+}
+
+.split-btn {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0;
+  text-align: center;
+  &_margin-left {
+    margin-left: 12px;
+  }
+  &_active {
+    background-color: $splitBtnActive-color;
+    color: white;
+    &:after {
+      content: url('../img/triangle.png');
+      position: absolute;
+      top: 82px;
+      left: 159px;
+    }
+  }
+  &_passive {
+    background-color: #fff;
+    border: 3px solid $splitBtnPassiveBorder-color !important;
+    color: $splitBtnPassive-color;
+  }
+  &__part-one {
+    border-radius: 6px 0 0 6px;
+    position: relative;
+  }
+  &__part-two {
+    border-radius: 0 6px 6px 0;
+    position: relative;
+    &:before {
+      display: none;
+      content: url('../img/triangle.png');
+      position: absolute;
+      top: 83px;
+      left: 158px;
+    }
+  }
+  &__part-one,
+  &__part-two {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    width: 375px;
+    border: none;
+    height: 71px;
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+}
+
+.link-btn {
+  text-decoration: none;
+  color: $linkBtn-color;
+  font-size: 1.25rem;
+  position: relative;
+  border-bottom: transparent;
+  &:before {
+    content: url('../img/full-feature.png');
+    position: absolute;
+    left: -45px;
+    top: -2px;
+
+  }
+  &:hover {
+    border-bottom: 2px solid $linkBtn-color;
+  }
+  &_margin-left {
+    margin-left: 63px;
+  }
+}
+
+.header {
+  background-image: url('../img/top-bkg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding-top: 69px;
+  padding-bottom: 57px;
+
+  &__main-title {
+    margin-bottom: 8px;
+    h1 {
+      font-weight: normal;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+  }
+  &__logo {
+    position: absolute;
+    top: 53px;
+    right: 69px;
+    img {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+  &__list {
+    font-size: 1.26rem;
+    margin: 12px 0 0 0;
+    padding-left: 26px;
+    li {
+      margin-bottom: 3px;
+    }
+  }
+  &__tip {
+    margin-top: 38px;
+    font-size: 1.375rem;
+  }
+  &__action {
+    margin-top: 46px;
+  }
+}
+
+.main-content {
+  padding-top: 68px;
+  &__description {
+    text-align: center;
+  }
+  &__description .big-title {
+    padding-left: 10px;
+  }
+  &__action {
+    margin-top: 44px;
+    text-align: center;
+    margin-left: 15px;
+  }
+  &__change {
+    background-color: #eeeeee;
+    padding-top: 21px;
+  }
+  &__some-bl {
+    &_light-color-gradient {
+      background-image: $light-color-gradient;
+    }
+    &_dark-background {
+      background-color: #eeeeee;
+    }
+  }
+}
+
+.paragraph {
+  font-size: $mainFontSize;
+  text-align: left;
+  padding-left: 3.5px;
+  padding-top: 13px;
+  line-height: 30px;
+  font-weight: normal;
+  &_margin-top {
+    margin-top: 10px;
+  }
+  &_margin-left {
+    margin-left: 27px;
+  }
+  &__extra {
+    clear: both;
+    display: block;
+  }
+}
+
+.guide {
+  position: relative;
+  padding-top: 32px;
+  &:before {
+    //content: url('../img/line.png');
+    //content: url('../img/line_cut-photo.ru.png');
+    position: absolute;
+    top: 71px;
+    left: 7.6px;
+    z-index: 10;
+  }
+  &__line {
+    position: absolute;
+    top: 71px;
+    left: 7px;
+    border-left: 2px solid $guide-line-color;
+    height: 106%;
+    &_short {
+      height: 99%;
+    }
+  }
+  &_change {
+    padding-top: 0!important;
+  }
+  &__list {
+    position: relative;
+    padding-left: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+    &_last {
+      margin-top: 7px;
+      margin-bottom: 20px;
+    }
+  }
+  &__item {
+    list-style-type: none;
+    font-size: $medium-font-size;
+    font-weight: 700;
+    margin-bottom: 34px;
+    overflow: hidden;
+    &_normal-dot-size {
+      &:before {
+        content: "\25CF";
+        font-size: 27px;
+        padding-right: 10px;
+        color: #bcbcbc;
+      }
+    }
+    &_other-dot-size {
+      &:before {
+        font-size: 18px !important;
+      }
+    }
+    &_second {
+      margin-bottom: 32px;
+    }
+  }
+  &__number {
+    color: $guide-number-color;
+    padding-left: 2px;
+  }
+  &__media {
+    margin-top: 75px;
+    margin-left: 34px;
+  }
+  &__action {
+    margin-top: 36px;
+  }
+  &__link-btn {
+    margin-top: 16px;
+    text-align: center;
+    padding-bottom: 48px;
+  }
+}
+
+.program {
+  padding-top: 65px;
+  padding-bottom: 86px;
+  overflow: hidden;
+  &__media {
+    float: left;
+    width: 40%;
+    text-align: right;
+    &_big-hide {
+      display: none;
+    }
+    img {
+      margin-top: 43px;
+      margin-right: 60px;
+    }
+  }
+  &__description {
+    width: 60%;
+    padding-left: 3.1%;
+    float: right;
+    font-size: $mainFontSize;
+  }
+  &__some-text {
+    margin-top: 29px;
+    padding-left: 3px;
+  }
+  &__items {
+    margin-top: 34px;
+    padding-left: 52px;
+  }
+  &__actions {
+    padding-top: 25px;
+    &_display-small {
+      display: none;
+    }
+  }
+  &__link {
+    margin-top: 11px;
+    width: 255px;
+    display: inline-block;
+    text-align: center;
+    font-size: $sub-link-size;
+    &_display-small {
+      display: none;
+    }
+    &_display-extra-sm {
+      display: none;
+    }
+    a {
+      color: $linkBtn-color;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      cursor: pointer;
+      &:hover {
+        border-bottom: 1px solid $linkBtn-color;
+        transition: .5s;
+      }
+      &:after {
+        content: url('../img/shevron-right-009cb8.png');
+        padding-left: 5px;
+      }
+    }
+    &_first {
+      margin-right: 27px;
+    }
+  }
+  &__title-wrap {
+    div {
+      text-align: center;
+    }
+    &_display-small {
+      display: none;
+    }
+  }
+}
+
+.text-and-media {
+  position: relative;
+  margin-bottom: 21px;
+  &_pic-ico {
+    &:before {
+      position: absolute;
+      content: url('../img/icons/icon-1-pictures.png');
+      left: -49px;
+      top: 0;
+    }
+  }
+  &_film-ico {
+    &:before {
+      position: absolute;
+      content: url('../img/icons/icon-2-film.png');
+      left: -49px;
+      top: 4px;
+    }
+  }
+  &_symbol-ico {
+    &:before {
+      position: absolute;
+      content: url('../img/icons/icon-text.png');
+      left: -43px;
+      top: 0;
+    }
+  }
+  &_diamond-ico {
+    &:before {
+      position: absolute;
+      content: url('../img/icons/icon-4-diamond-outlined-shape.png');
+      left: -48px;
+      top: 0;
+    }
+  }
+}
+
+.more {
+  padding-top: 35px;
+  padding-bottom: 27px;
+  text-align: center;
+  .big-title {
+    padding-left: 14px;
+  }
+}
+
+.how-to {
+  margin-top: 22px;
+  &__item {
+    cursor: pointer;
+    margin-bottom: 32px;
+    text-align: left;
+    height: 73px;
+    line-height: 67px;
+    padding-left: 17px;
+    width: 40.7%;
+    border: 2px dashed #bdbdbd;
+    font-size: $mainFontSize;
+    border-radius: 6px;
+    display: inline-block;
+    &:hover {
+      background-color: $how-t0-color;
+      transition: .5s;
+      border-color: $how-t0-color;
+    }
+    &_margin {
+      margin-left: 1.4%;
+      margin-right: 2%;
+    }
+  }
+}
+
+.questions {
+  padding-top: 67px;
+  text-align: center;
+  font-size: 0;
+  padding-bottom: 88px;
+}
+
+.urging-tiles {
+  margin-top: 30px;
+  padding-left: 10px;
+  &__wrap {
+    width: 459px;
+    display: inline-block;
+    &_margin-left {
+      margin-left: 2.7%;
+    }
+  }
+}
+
+.urging-tile {
+  border-radius: 6px;
+  padding: 17px 0;
+  background-color: #e3f0ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-decoration: none;
+  color: #3581d5;
+  font-size: $urging-tile-font-size;
+  &:hover {
+    color: #003269;
+    transition: .5s;
+  }
+  &__description {
+    text-align: left;
+    width: 39.7%;
+  }
+}
+
+.a {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+@import "media";
